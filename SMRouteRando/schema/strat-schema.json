@@ -1,0 +1,23 @@
+{
+  "Name": "StratName",
+  "Notable": "bool",
+  "Requires": "requirement",
+  "Obstacles?": [
+    {
+      "Id": "string",
+      "Requires": "requirement",
+      "Bypass?": "requirement",
+      "AdditionalObstacles?": [ "string" ]
+    }
+  ],
+  "Failures?": [
+    {
+      "Name": "string",
+      "LeadsToNode?": "int",
+      "Cost?": "requirement",
+      "Softlock?": "bool",
+      "ClearsPreviousNode?": "bool"
+    }
+  ],
+  "StratProperties?": [ "string" ]
+}

@@ -1,0 +1,66 @@
+[
+  "ItemName/",
+  {
+    "And": "$",
+    "Or": "$",
+    "Ammo": {
+      "Type": "Missile|Super|PowerBomb",
+      "Count": "int >= 1"
+    },
+    "AmmoDrain": {
+      "Type": "Missile|Super|PowerBomb",
+      "Count": "int >= 1"
+    },
+    "EnemyKill": {
+      "Enemies": [
+        [ "EnemyName" ]
+      ],
+      "ExplicitWeapons?": [ "WeaponName" ],
+      "ExcludedWeapons?": [ "WeaponName" ],
+      "FarmableAmmo?": [ "AmmoType" ]
+    },
+    "AcidFrames": "int >= 1",
+    "DraygonElectricityFrames": "int >= 1",
+    "EnemyDamage": {
+      "Enemy": "EnemyName",
+      "Type": "AttackType",
+      "Hits": "int >= 1"
+    },
+    "HeatFrames": "int >= 1",
+    "HibashHits": "int >= 1",
+    "LavaFrames": "int >= 1",
+    "LavaPhysicsFrames": "int >= 1",
+    "EnergyAtMost": "int >= 1",
+    "SpikeHits": "int >= 1",
+    "ThornHits": "int >= 1",
+    "AdjacentRunway": {
+      "FromNode": "int",
+      "UsedTiles": "num",
+      "InRoomPath?": [ "int" ]
+    },
+    "CanComeInCharged": {
+      "FromNode": "int",
+      "InRoomPath?": [ "int" ],
+      "FramesRemaining": "int [0,180]",
+      "ShinesparkFrames": "int >= 0"
+    },
+    "CanShineCharge": {
+      "UsedTiles": "int [1,33]",
+      "GentleUpTiles?": "int >= 0",
+      "GentleDownTiles?": "int >= 0",
+      "SteepUpTiles?": "int >= 0",
+      "SteepDownTiles?": "int >= 0",
+      "StartingDownTiles?": "int >= 0",
+      "OpenEnd": "int [0,2]",
+      "ShinesparkFrames": "int >= 0"
+    },
+    "PreviousNode": "int",
+    "PreviousStratProperty": "StratProperty",
+    "ResetRoom": {
+      "Nodes": [ "int" ],
+      "(ObstaclesToAvoid,": [ "ObstacleID" ],
+      "(NodesToAvoid/": [ "int" ],
+      "MustStayPut))+": "bool"
+    }
+  }
+]

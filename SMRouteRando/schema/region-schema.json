@@ -1,0 +1,124 @@
+{
+  "Rooms": [
+    {
+      "Id": "int",
+      "Name": "string",
+      "Area": "string",
+      "Subarea": "string",
+      "RoomAddress?": "hex",
+      "Nodes": [
+        {
+          "Id": "int",
+          "Name": "string",
+          "NodeType": "Door|Entrance|Exit|Junction|Item|Event|Utility",
+          "NodeSubType": "Gray|Blue|Red|Green|Yellow|Eye|Elevator|Doorway|Passage|Sandpit|InRoomTransition|ClosedWall|OneWay|Vertical|Junction|Hidden|Chozo|Visible|Flag|Boss|Save|Map|Energy|Missile|Ship",
+          "NodeItem?": "string",
+          "NodeAddress?": "hex",
+          "InteractionRequires?": "requirement",
+          "Runways?": [
+            {
+              "Name": "string",
+              "Length": "int [0,33]",
+              "GentleUpTiles?": "int",
+              "GentleDownTiles?": "int",
+              "SteepUpTiles?": "int",
+              "SteepDownTiles?": "int",
+              "StartingDownTiles?": "int",
+              "EndingUpTiles?": "int",
+              "Strats": [ "strats" ],
+              "UsableComingIn?": "bool:true",
+              "OpenEnd": "int [0,1]"
+            }
+          ],
+          "CanLeaveCharged?": [
+            {
+              "UsedTiles": "int [1,33]",
+              "FramesRemaining": "int",
+              "ShinesparkFrames?": "int",
+              "InitiateRemotely?": {
+                "InitiateAt": "int",
+                "MustOpenDoorFirst": "bool",
+                "PathToDoor": [
+                  {
+                    "DestinationNode": "int",
+                    "Strats": [ "string" ]
+                  }
+                ]
+              },
+              "Strats": [ "strat" ],
+              "OpenEnd": "int [0,2]",
+              "GentleUpTiles?": "int",
+              "GentleDownTiles?": "int",
+              "SteepUpTiles?": "int",
+              "SteepDownTiles?": "int",
+              "StartingDownTiles?": "int"
+            }
+          ],
+          "SpawnAt?": "int",
+          "Locks?": [
+            {
+              "Name": "string",
+              "LockType": "bossFight|coloredDoor|cutscene|escapeFunnel|gameFlag|killEnemies|permanent|triggeredEvent",
+              "Lock?": "requirement",
+              "UnlockStrats": [ "strat" ],
+              "BypassStrats?": [ "strat" ]
+            }
+          ],
+          "TwinDoorAddresses?:null|": [
+            {
+              "RoomAddress": "string",
+              "DoorAddress": "string"
+            }
+          ],
+          "Utility?": [ "Save|Missile|Super|Powerbomb|Energy|Reserve|Map" ],
+          "ViewableNodes?": [
+            {
+              "Id": "int",
+              "Strats": [ "strat" ]
+            }
+          ],
+          "Yields?": [ "string" ]
+        }
+      ],
+      "Links": [
+        {
+          "From": "int",
+          "To:null|": [
+            {
+              "Id": "int",
+              "Strats": [ "strat" ]
+            }
+          ]
+        }
+      ],
+      "Obstacles?": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "ObstacleType": "inanimate|enemies",
+          "Requires?": "requirement"
+        }
+      ],
+      "Enemies?": [
+        {
+          "Id": "string",
+          "GroupName": "string",
+          "EnemyName": "string",
+          "Quantity": "int",
+          "(HomeNodes/": [ "int" ],
+          "BetweenNodes)": [ "int" ],
+          "Spawn?": "requirement",
+          "StopSpawn?": "requirement",
+          "(DropRequires/": "requirement",
+          "FarmCycles)?": [
+            {
+              "Name": "string",
+              "CycleFrames": "int",
+              "Requires": "requirement"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
